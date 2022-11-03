@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bmi.css">
+    <link rel="stylesheet" href="bmi.js">
+    <title>BMI Calculator</title>
+</head>
+<body> 
+    <div class="main">
+    <form  name="formu1" autocomplete="off" onsubmit="return false" >
+   
+        <h1>Calculate your BMI</h1>
+        <p class="text">Height(m)</p>
+        <input type="number"id="height" required>
+    <p class="text">Weight(kg)</p>
+    <input type="number" id="weight" required>
+    <p class="text" >Gender</p>
+   <span class="gender"> M:</span><input type="radio"  id="M" value="M" name="gender" >
+  <span class="gender">  F:</span> <input type="radio" name="gender"  id="F" value="F">
+    <p id="result"> </p>
+    <p id="result1"></p>
+    <button id="btn" onclick="calc()">Calculate</button>
+    <input type="button" value="Reset" id="btn" onclick="submit_form();" />
+
+
+    </form>
+    </div>
+ <script>
+     function submit_form() {
+document.formu1.submit();
+document.formu1.reset(); 
+}
+     function calc()
+        {
+            var h=document.getElementById("height").value;
+            var w=document.getElementById("weight").value;
+        
+         
+            var bmi=w/(h/100*h/100);
+            bmii=(bmi.toFixed(2));
+        
+           //bmi calc
+            if(bmii<18.5)
+            {
+                document.getElementById("result").innerHTML="Your BMI is " + bmii + "<br>You are underweight";
+                  
+            }
+            else 
+            if(bmii>=18.5 && bmii<24.9)
+            {
+            document.getElementById("result").innerHTML="Your BMI is " + bmii + "<br>You are in a normal weight";
+            }
+            else
+            if(bmii>=25 && bmii<29.9)
+            {
+                document.getElementById("result").innerHTML="Your BMI is " + bmii + "<br>You are overweight";
+            }
+            else
+            {
+            document.getElementById("result").innerHTML="Your BMI is " + bmii + "<br>You are obesity";
+            }
+            //advice for female
+        
+     if(document.getElementById("F").checked)
+     {
+            if(h>=137&&h<140)
+            {
+                document.getElementById("result1").innerHTML=`As a female your normal weight<br> based in you height should be 28.5-34.9 kg`
+            }
+            else if(h>=140&&h<142)
+            {
+                document.getElementById("result1").innerHTML=`As a female your normal weight<br> based in you height should be 30.8-37.6 kg` 
+            }
+            else if(h>=142&&h<145)
+            {
+                document.getElementById("result1").innerHTML=`As a female your normal weight<br> based in you height should be 32.6-39.9kg` 
+            }
+            else if(h>=145&&h<147)
+            {
+                document.getElementById("result1").innerHTML=`As a female your normal weight<br> based in you height should be 34.9-42.6kg` 
+            }
+            else if(h>=147&&h<150)
+            {
+                document.getElementById("result1").innerHTML=`As a female your normal weight<br> based in you height should be 36.4-44.9 kg` 
+            }
+            else if(h>=150&&h<152)
+            {
+                document.getElementById("result1").innerHTML=`As a female your normal weight<br> based in you height should be 39-47.6 kg` 
+            }
+            else if(h>=152&&h<155)
+            {
+                document.getElementById("result1").innerHTML=`As a female your normal weight<br> based in you height should be 40.8-49.9kg` 
+            }
+            else if(h>=155&&h<157)
+            {
+                document.getElementById("result1").innerHTML=`As a female your normal weight<br> based in you height should be 43.1-52.6kg` 
+            }
+            else if(h>=157&&h<160)
+            {
+                document.getElementById("result1").innerHTML=`As a female your normal weight<br> based in you height should be 44.9-54.9kg` 
+            }
+            else if(h>=160&&h<163)
+            {
+                document.getElementById("result1").innerHTML=`As a female your normal weight<br> based in you height should be 47.2-57.6kg` 
+            }
+            else if(h>=163&&h<165)
+            {
+                document.getElementById("result1").innerHTML=`As a female your normal weight<br> based in you height should be 49-59.9kg` 
+            }
+            else if(h>=165&&h<168)
+            {
+                document.getElementById("result1").innerHTML=`As a female your normal weight<br> based in you height should be 51.2-62.6kg` 
+            }
+            else if(h>=168&&h<170)
+            {
+                document.getElementById("result1").innerHTML=`As a female your normal weight<br> based in you height should be 53-64.8kg` 
+            }
+            else if(h>=170&&h<173)
+            {
+                document.getElementById("result1").innerHTML=`As a female your normal weight<br> based in you height should be 55.3-67.6kg` 
+            }
+            else if(h>=173&h<175)
+            {
+                document.getElementById("result1").innerHTML="As a female your normal weight<br> based in you height should be "
+                + "57.1-69.8kg" 
+            }   else if(h>=175&&h<178)
+            {
+                document.getElementById("result1").innerHTML=`As a female your normal weight<br> based in you height should be 59.4-72.6kg` 
+            }
+            else if(h>=178&&h<180)
+            {
+                document.getElementById("result1").innerHTML=`As a female your normal weight<br> based in you height should be 61.2-74.8kg` 
+            }
+            else if(h>=180&&h<183)
+            {
+                document.getElementById("result1").innerHTML=`As a female your normal weight<br> based in you height should be 63.5-77.5kg` 
+            }
+            else if(h>=183&&h<185)
+            {
+                document.getElementById("result1").innerHTML=`As a female your normal weight<br> based in you height should be 65.3-79.8kg` 
+            }
+            else if(h>=185&&h<188)
+            {
+                document.getElementById("result1").innerHTML=`As a female your normal weight<br> based in you height should be 67.6-82.5kg` 
+            }
+            else if(h>=188&&h<191)
+            {
+                document.getElementById("result1").innerHTML=`As a female your normal weight<br> based in you height should be 69.4-84.8kg` 
+            }
+            else if(h>=191&&h<193)
+            {
+                document.getElementById("result1").innerHTML=`As a female your normal weight<br> based in you height should be 71.6-87.5kg` 
+            }
+            else if(h>=193&&h<195)
+            {
+                document.getElementById("result1").innerHTML=`As a female your normal weight<br> based in you height should be 73.5-89.8kg` 
+            }
+            else if(h>=195&&h<198)
+            {
+                document.getElementById("result1").innerHTML=`As a female your normal weight<br> based in you height should be 75.7-92.5kg` 
+            }
+            else if(h>=198&&h<201)
+            {
+                document.getElementById("result1").innerHTML=`As a female your normal weight<br> based in you height should be 77.5-94.8kg` 
+            }
+  }
+         //advise for male
+         
+    else
+     if(document.getElementById("M").checked) 
+     {
+            if(h>=137&&h<140)
+            {
+                document.getElementById("result1").innerHTML=`As a male your normal weight<br> based in you height should be 28.5-34.9 kg`
+            }
+            else if(h>=140&&h<142)
+            {
+                document.getElementById("result1").innerHTML=`As a male your normal weight<br> based in you height should be 30.8-38.1 kg` 
+            }
+            else if(h>=142&&h<145)
+            {
+                document.getElementById("result1").innerHTML=`As a male your normal weight<br> based in you height should be 33.5-40.8kg` 
+            }
+            else if(h>=145&&h<147)
+            {
+                document.getElementById("result1").innerHTML=`As a male your normal weight<br> based in you height should be 35.8-43.9kg` 
+            }
+            else if(h>=147&&h<150)
+            {
+                document.getElementById("result1").innerHTML=`As a male your normal weight<br> based in you height should be 38.5-46.7kg` 
+            }
+            else if(h>=150&&h<152)
+            {
+                document.getElementById("result1").innerHTML=`As a male your normal weight<br> based in you height should be 40.8-49.9kg` 
+            }
+            else if(h>=152&&h<155)
+            {
+                document.getElementById("result1").innerHTML=`As a male your normal weight<br> based in you height should be 43.1-53kg` 
+            }
+            else if(h>=155&&h<157)
+            {
+                document.getElementById("result1").innerHTML=`As a male your normal weight<br> based in you height should be 45.8-55.8kg` 
+            }
+            else if(h>=157&&h<160)
+            {
+                document.getElementById("result1").innerHTML=`As a male your normal weight<br> based in you height should be 48.1-58.9kg` 
+            }
+            else if(h>=160&&h<163)
+            {
+                document.getElementById("result1").innerHTML=`As a male your normal weight<br> based in you height should be 50.8-61.6kg` 
+            }
+            else if(h>=163&&h<165)
+            {
+                document.getElementById("result1").innerHTML=`As a male your normal weight<br> based in you height should be 53-64.8kg` 
+            }
+            else if(h>=165&&h<168)
+            {
+                document.getElementById("result1").innerHTML=`As a male your normal weight<br> based in you height should be 55.3-68kg` 
+            }
+            else if(h>=168&&h<170)
+            {
+                document.getElementById("result1").innerHTML="As a male your normal weight<br> based in you height should be 58-70.7kg"
+            }
+            else if(h>=170&&h<173)
+            {
+                document.getElementById("result1").innerHTML=`As a male your normal weight<br> based in you height should be 60.3-73.9kg` 
+            }
+            else if(h>=173&h<175)
+            {
+                document.getElementById("result1").innerHTML=`As a male your normal weight<br> based in you height should be 63-76.6kg` 
+            }   else if(h>=175&&h<178)
+            {
+                document.getElementById("result1").innerHTML=`As a male your normal weight<br> based in you height should be 65.3-79.8kg` 
+            }
+            else if(h>=178&&h<180)
+            {
+                document.getElementById("result1").innerHTML=`As a male your normal weight<br> based in you height should be 67.6-83kg` 
+            }
+            else if(h>=180&&h<183)
+            {
+                document.getElementById("result1").innerHTML=`As a male your normal weight<br> based in you height should be 70.3-85.7kg` 
+            }
+            else if(h>=183&&h<185)
+            {
+                document.getElementById("result1").innerHTML=`As a male your normal weight<br> based in you height should be 72.6-88.9kg` 
+            }
+            else if(h>=185&&h<188)
+            {
+                document.getElementById("result1").innerHTML=`As a male your normal weight<br> based in you height should be 75.6-91.6kg` 
+            }
+            else if(h>=188&&h<191)
+            {
+                document.getElementById("result1").innerHTML=`As a male your normal weight<br> based in you height should be 77.5-94.8kg` 
+            }
+            else if(h>=191&&h<193)
+            {
+                document.getElementById("result1").innerHTML=`As a male your normal weight<br> based in you height should be 79.8-98kg` 
+            }
+            else if(h>=193&&h<195)
+            {
+                document.getElementById("result1").innerHTML=`As a male your normal weight<br> based in you height should be 82.5-100.6kg` 
+            }
+            else if(h>=195&&h<198)
+            {
+                document.getElementById("result1").innerHTML=`As a male your normal weight<br> based in you height should be 84.8-103.8kg` 
+            }
+            else if(h>=198&&h<201)
+            {
+                document.getElementById("result1").innerHTML=`As a male your normal weight<br> based in you height should be 87.5-106.5kg` 
+            }
+         }
+        
+        }
+    
+ </script>
+</body>
+</html>

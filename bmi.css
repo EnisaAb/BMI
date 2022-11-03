@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Gabriela&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    min-height: 100vh;
+    background-color: black;
+    background-image: radial-gradient(circle,#fff,#52BEFD) ;
+    font-family: Armata; 
+}
+
+
+div
+{
+
+    width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%,-50%);
+    padding: 20px;
+    border-radius: 20px;
+box-shadow: 2px 2px 4px #000000;
+    transition: 00.5s;
+}
+
+h1{
+    font-size: 50px;
+    color:rgb(52, 110, 165);
+    text-align: center;
+}
+
+.text
+{
+
+    text-align:left;
+    margin-left: 200px;
+    color:rgb(52, 110, 165);
+}
+ #weight ,#height
+{
+    color:rgb(52, 110, 165);
+    text-align: left;
+    font-size: 20px;
+    font-weight: 200;
+background: none;
+border: none;
+    border-bottom: 1px solid #10CCE1;
+    width: 150px;
+}
+p{
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.gender
+{
+    color:rgb(52, 110, 165);
+}
+#weight:focus, #height:focus
+{
+    border: none;
+    font-size: 20px;
+    border-bottom: 2px solid #10CCE1;
+    width: 300px;
+    transition:0.5s;
+}
+#F,#M
+{
+    padding: 20px;
+    margin-right: 20px;
+}
+#result,#result1
+{
+    text-align: center;
+    color:rgb(52, 110, 165);
+}
+#btn
+{
+  
+    margin-top:10px ;
+    border:none;
+
+    color: white;
+    width: 150px;
+    padding: 10px;
+    border-radius: 30px;
+    outline: none;
+    cursor: pointer;
+   background-color: rgb(52, 110, 165);
+   transition: width 2s;
+}
+#btn:hover{
+    box-shadow: 1px 1px 10px #52BEFD ;
+    background-color: #52BEFD;
+    text-decoration: none;
+width: 200px;
+}
+
+ 
+
+
+
+@media   (max-width: 550px) {
+    div {
+        width:350px; 
+    }
+    .text{
+    margin-left:100px;
+    }
+
+  }
+  @media (max-width:400px)
+  {
+      div{
+          width: 300px;
+      }
+      .text{
+        margin-left:70px;
+        }
+       
+  }
+@media (min-width:400px){
+    h1{
+        font-size: 30px;
+    }
+}
+
+@media (max-width:400px)
+{
+   h1{font-size: 30px;} 
+}
+
+
+
